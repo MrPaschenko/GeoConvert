@@ -38,8 +38,27 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        let headerLabel = UILabel()
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+        switch section{
+            case 0:
+                headerLabel.text = "WGS 84"
+            case 1:
+            headerLabel.text = "CK-42"
+        default:
+            headerLabel.text = "Section"
+        }
+        headerView.addSubview(headerLabel)
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16.0).isActive = true
+        headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+        return headerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
     }
 
     /*
