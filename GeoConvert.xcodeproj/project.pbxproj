@@ -14,6 +14,7 @@
 		A2E0F71E29F1792B007EB941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2E0F71D29F1792B007EB941 /* Assets.xcassets */; };
 		A2E0F72129F1792B007EB941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E0F71F29F1792B007EB941 /* LaunchScreen.storyboard */; };
 		A2E0F72929F18E2D007EB941 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0F72829F18E2D007EB941 /* MainTableViewController.swift */; };
+		A2E0F72B29F193ED007EB941 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0F72A29F193ED007EB941 /* TextFieldTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A2E0F72029F1792B007EB941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2E0F72229F1792B007EB941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E0F72829F18E2D007EB941 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A2E0F72A29F193ED007EB941 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				A2E0F71F29F1792B007EB941 /* LaunchScreen.storyboard */,
 				A2E0F72229F1792B007EB941 /* Info.plist */,
 				A2E0F72829F18E2D007EB941 /* MainTableViewController.swift */,
+				A2E0F72A29F193ED007EB941 /* TextFieldTableViewCell.swift */,
 			);
 			path = GeoConvert;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				A2E0F71929F1792A007EB941 /* ViewController.swift in Sources */,
 				A2E0F71529F1792A007EB941 /* AppDelegate.swift in Sources */,
 				A2E0F71729F1792A007EB941 /* SceneDelegate.swift in Sources */,
+				A2E0F72B29F193ED007EB941 /* TextFieldTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
