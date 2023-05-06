@@ -1,6 +1,8 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
+    
+    let placeholderTexts = ["50.447165", "30.453952", "5593789", "6319300"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +25,45 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FieldCell", for: indexPath)
-
-        cell.textLabel?.text = "Hello world \(indexPath.row)"
-        // Configure the cell...
-
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "FieldCell")
+        
+        let numberField = UITextField()
+        numberField.keyboardType = .decimalPad
+        numberField.placeholder = placeholderTexts[indexPath.section * 2 + indexPath.row]
+        cell.contentView.addSubview(numberField)
+        numberField.translatesAutoresizingMaskIntoConstraints = false
+        numberField.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 16.0).isActive = true
+        numberField.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16.0).isActive = true
+        numberField.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+        
         return cell
     }
+
+
+
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            let headerLabel = UILabel()
+            headerLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+            switch section {
+            case 0:
+                headerLabel.text = "WGS 84"
+            case 1:
+                headerLabel.text = "CK-42"
+            default:
+                headerLabel.text = ""
+            }
+            headerView.addSubview(headerLabel)
+            headerLabel.translatesAutoresizingMaskIntoConstraints = false
+            headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16.0).isActive = true
+            headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+            return headerView
+        }
+
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
     }
 
     /*
