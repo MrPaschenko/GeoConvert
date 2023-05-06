@@ -110,7 +110,7 @@ class MainTableViewController: UITableViewController {
     */
     
     @objc func dismissKeyboard() {
-        tableView.keyboardDismissMode = .onDrag
+        tableView.keyboardDismissMode = .interactive
         view.endEditing(true)
     }
 }
