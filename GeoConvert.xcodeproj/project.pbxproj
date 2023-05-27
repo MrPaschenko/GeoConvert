@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A258EA192A06908A00DDA283 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258EA182A06908A00DDA283 /* Coordinates.swift */; };
 		A2E0F71529F1792A007EB941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0F71429F1792A007EB941 /* AppDelegate.swift */; };
 		A2E0F71729F1792A007EB941 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0F71629F1792A007EB941 /* SceneDelegate.swift */; };
 		A2E0F71C29F1792A007EB941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E0F71A29F1792A007EB941 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A258EA182A06908A00DDA283 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
 		A2E0F71129F1792A007EB941 /* GeoConvert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoConvert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E0F71429F1792A007EB941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2E0F71629F1792A007EB941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		A258EA172A068AB000DDA283 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A258EA182A06908A00DDA283 /* Coordinates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				A2E0F72929F18E2D007EB941 /* MainTableViewController.swift in Sources */,
 				A2E0F71529F1792A007EB941 /* AppDelegate.swift in Sources */,
 				A2E0F71729F1792A007EB941 /* SceneDelegate.swift in Sources */,
+				A258EA192A06908A00DDA283 /* Coordinates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
