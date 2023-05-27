@@ -109,21 +109,21 @@ struct Coordinates {
     }
 
     // Convert SK42 coordinates to WGS84
-    mutating func SK42_WGS84(latitude: Double, longtitude: Double, height: Double) {
+    mutating func SK42_WGS84() {
         WGS84 = []
         
-        let newLatitude = SK42_WGS84_Lat(Bd: latitude, Ld: longtitude, H: height)
-        let newLongtitude = SK42_WGS84_Long(Bd: latitude, Ld: longtitude, H: height)
+        let newLatitude = SK42_WGS84_Lat(Bd: SK42[0], Ld: SK42[1], H: SK42[2])
+        let newLongtitude = SK42_WGS84_Long(Bd: SK42[0], Ld: SK42[1], H: SK42[2])
         
         WGS84 = [newLatitude, newLongtitude, 0]
     }
 
     // Convert WGS84 coordinates to SK42
-    mutating func WGS84_SK42(latitude: Double, longtitude: Double, height: Double) {
+    mutating func WGS84_SK42() {
         SK42 = []
         
-        let newLatitude = WGS84_SK42_Lat(Bd: latitude, Ld: longtitude, H: height)
-        let newLongtitude = WGS84_SK42_Long(Bd: latitude, Ld: longtitude, H: height)
+        let newLatitude = WGS84_SK42_Lat(Bd: WGS84[0], Ld: WGS84[1], H: WGS84[2])
+        let newLongtitude = WGS84_SK42_Long(Bd: WGS84[0], Ld: WGS84[1], H: WGS84[2])
         
         SK42 = [newLatitude, newLongtitude, 0]
     }

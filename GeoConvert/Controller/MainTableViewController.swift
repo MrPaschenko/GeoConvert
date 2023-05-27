@@ -50,12 +50,16 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
                 switch textField.tag {
                 case 0:
                     coordinates.WGS84[0] = doubleValue
+                    coordinates.WGS84_SK42()
                 case 1:
                     coordinates.WGS84[1] = doubleValue
+                    coordinates.WGS84_SK42()
                 case 2:
                     coordinates.SK42[0] = doubleValue
+                    coordinates.SK42_WGS84()
                 case 3:
                     coordinates.SK42[1] = doubleValue
+                    coordinates.SK42_WGS84()
                 default:
                     print("loh")
                 }
@@ -75,7 +79,7 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         if currentTag == 0 { // Only update the third cell if the first cell is changed
             guard let thirdCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) else { return }
             if let thirdNumberField = thirdCell.contentView.subviews.first as? UITextField {
-                thirdNumberField.text = coordinates.WGS84_SK42(latitude: <#T##Double#>, longtitude: <#T##Double#>, height: <#T##Double#>) // Set the text of the third cell's text field to the first cell's text
+                thirdNumberField.text = String(coordinates.SK42[0]) // Set the text of the third cell's text field to the first cell's text
             }
         }
     }
