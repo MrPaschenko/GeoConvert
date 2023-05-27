@@ -2,6 +2,8 @@ import UIKit
 
 class MainTableViewController: UITableViewController, UITextFieldDelegate {
     
+    var coordinates = Coordinates()
+    
     let placeholderTexts = ["50.447165", "30.453952", "5593789", "6319300"]
     let numberLimit = 9 // Maximum number of characters allowed
     
