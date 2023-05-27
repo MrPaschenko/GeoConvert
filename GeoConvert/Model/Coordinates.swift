@@ -2,8 +2,8 @@ import Foundation
 
 struct Coordinates {
     
-    var SK42: [Double]
-    var WGS84: [Double]
+    var SK42: [Double] = [0, 0, 0]
+    var WGS84: [Double] = [0, 0, 0]
     
     let ro = 206264.8062 // Number of arc seconds in a radian
 

@@ -3,6 +3,8 @@ import UIKit
 class MainTableViewController: UITableViewController, UITextFieldDelegate {
     
     var coordinates = Coordinates()
+    var activeTextField: UITextField?
+
     
     let placeholderTexts = ["50.447165", "30.453952", "5593789", "6319300"]
     let numberLimit = 9 // Maximum number of characters allowed
@@ -36,11 +38,53 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         numberField.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 16.0).isActive = true
         numberField.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -16.0).isActive = true
         numberField.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor).isActive = true
+        numberField.tag = indexPath.section * 2 + indexPath.row
+
         
         return cell
     }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if let text = textField.text {
+            if let doubleValue = Double(text) {
+                switch textField.tag {
+                case 0:
+                    coordinates.WGS84[0] = doubleValue
+                case 1:
+                    coordinates.WGS84[1] = doubleValue
+                case 2:
+                    coordinates.SK42[0] = doubleValue
+                case 3:
+                    coordinates.SK42[1] = doubleValue
+                default:
+                    print("loh")
+                }
+                printNumber()
+            } else {
+                // Handle the case where the text cannot be converted to a Double
+            }
+        } else {
+            // Handle the case where textField.text is nil
+        }
+    }
+    
+    func printNumber() {
+        guard let textField = activeTextField else { return }
+        let currentTag = textField.tag
+
+        if currentTag == 0 { // Only update the third cell if the first cell is changed
+            guard let thirdCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) else { return }
+            if let thirdNumberField = thirdCell.contentView.subviews.first as? UITextField {
+                thirdNumberField.text = coordinates.WGS84_SK42(latitude: <#T##Double#>, longtitude: <#T##Double#>, height: <#T##Double#>) // Set the text of the third cell's text field to the first cell's text
+            }
+        }
+    }
+
+
+
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            activeTextField = textField
             // Calculate the new text if the replacement string is applied
             let currentText = textField.text ?? ""
             let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
