@@ -1,30 +1,32 @@
 import UIKit
 
-class MainTableViewController: UITableViewController {
+class MainTableViewController: UITableViewController, UITextFieldDelegate {
     
     let placeholderTexts = ["50.447165", "30.453952", "5593789", "6319300"]
-
+    let numberLimit = 9 // Maximum number of characters allowed
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 2;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "FieldCell")
         
         let numberField = UITextField()
+        numberField.delegate = self
         numberField.keyboardType = .decimalPad
         numberField.placeholder = placeholderTexts[indexPath.section * 2 + indexPath.row]
         cell.contentView.addSubview(numberField)
@@ -35,6 +37,19 @@ class MainTableViewController: UITableViewController {
         
         return cell
     }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            // Calculate the new text if the replacement string is applied
+            let currentText = textField.text ?? ""
+            let updatedText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            
+            // Check if the updated text exceeds the limit
+            if updatedText.count <= numberLimit {
+                return true // Allow the change
+            } else {
+                return false // Reject the change
+            }
+        }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -58,7 +73,6 @@ class MainTableViewController: UITableViewController {
             headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
             return headerView
         }
-
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
@@ -114,3 +128,4 @@ class MainTableViewController: UITableViewController {
         view.endEditing(true)
     }
 }
+
