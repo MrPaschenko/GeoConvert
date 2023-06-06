@@ -75,12 +75,54 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
     func printNumber() {
         guard let textField = activeTextField else { return }
         let currentTag = textField.tag
-
-        if currentTag == 0 { // Only update the third cell if the first cell is changed
+        
+        switch currentTag {
+        case 0:
             guard let thirdCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) else { return }
             if let thirdNumberField = thirdCell.contentView.subviews.first as? UITextField {
                 thirdNumberField.text = String(coordinates.SK42[0]) // Set the text of the third cell's text field to the first cell's text
             }
+            
+            guard let fourthCell = tableView.cellForRow(at: IndexPath(row: 1, section: 1)) else { return }
+            if let fourthNumberField = fourthCell.contentView.subviews.first as? UITextField {
+                fourthNumberField.text = String(coordinates.SK42[1])
+            }
+            
+        case 1:
+            guard let thirdCell = tableView.cellForRow(at: IndexPath(row: 0, section: 1)) else { return }
+            if let thirdNumberField = thirdCell.contentView.subviews.first as? UITextField {
+                thirdNumberField.text = String(coordinates.SK42[0]) // Set the text of the third cell's text field to the first cell's text
+            }
+            
+            guard let fourthCell = tableView.cellForRow(at: IndexPath(row: 1, section: 1)) else { return }
+            if let fourthNumberField = fourthCell.contentView.subviews.first as? UITextField {
+                fourthNumberField.text = String(coordinates.SK42[1])
+            }
+            
+        case 2:
+            guard let firstCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else { return }
+            if let firstNumberField = firstCell.contentView.subviews.first as? UITextField {
+                firstNumberField.text = String(coordinates.WGS84[0])
+            }
+            
+            guard let secondCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else { return }
+            if let secondNumberField = secondCell.contentView.subviews.first as? UITextField {
+                secondNumberField.text = String(coordinates.WGS84[1])
+            }
+            
+        case 3:
+            guard let firstCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) else { return }
+            if let firstNumberField = firstCell.contentView.subviews.first as? UITextField {
+                firstNumberField.text = String(coordinates.WGS84[0])
+            }
+            
+            guard let secondCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) else { return }
+            if let secondNumberField = secondCell.contentView.subviews.first as? UITextField {
+                secondNumberField.text = String(coordinates.WGS84[1])
+            }
+        default:
+            print("Do nothing")
+            print(currentTag)
         }
     }
 
