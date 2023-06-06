@@ -70,6 +70,32 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         } else {
             // Handle the case where textField.text is nil
         }
+        
+        // Clear CK-42 and WGS 84 cells if both WGS cells are empty
+        let firstWgsCellIndexPath = IndexPath(row: 0, section: 0)
+        let secondWgsCellIndexPath = IndexPath(row: 1, section: 0)
+        let firstCk42CellIndexPath = IndexPath(row: 0, section: 1)
+        let secondCk42CellIndexPath = IndexPath(row: 1, section: 1)
+        
+        guard let firstWgsCell = tableView.cellForRow(at: firstWgsCellIndexPath),
+              let secondWgsCell = tableView.cellForRow(at: secondWgsCellIndexPath),
+              let firstCk42Cell = tableView.cellForRow(at: firstCk42CellIndexPath),
+              let secondCk42Cell = tableView.cellForRow(at: secondCk42CellIndexPath) else {
+            return
+        }
+        
+        let firstWgsNumberField = firstWgsCell.contentView.subviews.first as? UITextField
+        let secondWgsNumberField = secondWgsCell.contentView.subviews.first as? UITextField
+        let firstCk42NumberField = firstCk42Cell.contentView.subviews.first as? UITextField
+        let secondCk42NumberField = secondCk42Cell.contentView.subviews.first as? UITextField
+        
+        if firstWgsNumberField?.text?.isEmpty == true && secondWgsNumberField?.text?.isEmpty == true {
+            firstCk42NumberField?.text = ""
+            secondCk42NumberField?.text = ""
+        } else if firstCk42NumberField?.text?.isEmpty == true && secondCk42NumberField?.text?.isEmpty == true {
+            firstWgsNumberField?.text = ""
+            secondWgsNumberField?.text = ""
+        }
     }
     
     func printNumber() {
