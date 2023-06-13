@@ -1,6 +1,6 @@
 import Foundation
 
-struct Coordinates {
+class Coordinates {
     
     var SK42: [Double] = [0, 0, 0]
     var WGS84: [Double] = [0, 0, 0]
@@ -46,27 +46,27 @@ struct Coordinates {
     }
 
     // Convert WGS84 coordinates to SK42 (Krassovsky) latitude
-    private mutating func WGS84_SK42_Lat(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func WGS84_SK42_Lat(Bd: Double, Ld: Double, H: Double) -> Double {
         return Bd - dB(Bd: Bd, Ld: Ld, H: H) / 3600
     }
 
     // Convert SK42 (Krassovsky) coordinates to WGS84 latitude
-    private mutating func SK42_WGS84_Lat(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func SK42_WGS84_Lat(Bd: Double, Ld: Double, H: Double) -> Double {
         return Bd + dB(Bd: Bd, Ld: Ld, H: H) / 3600
     }
 
     // Convert WGS84 coordinates to SK42 (Krassovsky) longitude
-    private mutating func WGS84_SK42_Long(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func WGS84_SK42_Long(Bd: Double, Ld: Double, H: Double) -> Double {
         return Ld - dL(Bd: Bd, Ld: Ld, H: H) / 3600
     }
 
     // Convert SK42 (Krassovsky) coordinates to WGS84 longitude
-    private mutating func SK42_WGS84_Long(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func SK42_WGS84_Long(Bd: Double, Ld: Double, H: Double) -> Double {
         return Ld + dL(Bd: Bd, Ld: Ld, H: H) / 3600
     }
 
     // Function to calculate the latitude difference between WGS84 and SK42 (Krassovsky)
-    private mutating func dB(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func dB(Bd: Double, Ld: Double, H: Double) -> Double {
         let B = degreesToRadians(Bd)
         let L = degreesToRadians(Ld)
         lazy var M = a * (1 - e2) / pow((1 - e2 * pow(sin(B), 2)), 1.5)
@@ -81,7 +81,7 @@ struct Coordinates {
     }
 
     // Function to calculate the longitude difference between WGS84 and SK42 (Krassovsky)
-    private mutating func dL(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func dL(Bd: Double, Ld: Double, H: Double) -> Double {
         let B = degreesToRadians(Bd)
         let L = degreesToRadians(Ld)
         let N = a * pow((1 - e2 * pow(sin(B), 2)), -0.5)
@@ -92,7 +92,7 @@ struct Coordinates {
     }
 
     // Function to calculate the WGS84 altitude
-    private mutating func WGS84Alt(Bd: Double, Ld: Double, H: Double) -> Double {
+    private func WGS84Alt(Bd: Double, Ld: Double, H: Double) -> Double {
         let B = degreesToRadians(Bd)
         let L = degreesToRadians(Ld)
         let N = a * pow((1 - e2 * pow(sin(B), 2)), -0.5)
@@ -109,7 +109,7 @@ struct Coordinates {
     }
 
     // Convert SK42 coordinates to WGS84
-    mutating func SK42_WGS84() {
+    func SK42_WGS84() {
         WGS84 = []
         
         let newLatitude = SK42_WGS84_Lat(Bd: SK42[0], Ld: SK42[1], H: SK42[2])
@@ -119,7 +119,7 @@ struct Coordinates {
     }
 
     // Convert WGS84 coordinates to SK42
-    mutating func WGS84_SK42() {
+    func WGS84_SK42() {
         SK42 = []
         
         let newLatitude = WGS84_SK42_Lat(Bd: WGS84[0], Ld: WGS84[1], H: WGS84[2])
