@@ -171,7 +171,34 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        // Clear all cells if CK-42 cell is clicked
+        if indexPath.section == 1 {
+            let firstWgsCellIndexPath = IndexPath(row: 0, section: 0)
+            let secondWgsCellIndexPath = IndexPath(row: 1, section: 0)
+            let firstCk42CellIndexPath = IndexPath(row: 0, section: 1)
+            let secondCk42CellIndexPath = IndexPath(row: 1, section: 1)
+            
+            guard let firstWgsCell = tableView.cellForRow(at: firstWgsCellIndexPath),
+                  let secondWgsCell = tableView.cellForRow(at: secondWgsCellIndexPath),
+                  let firstCk42Cell = tableView.cellForRow(at: firstCk42CellIndexPath),
+                  let secondCk42Cell = tableView.cellForRow(at: secondCk42CellIndexPath) else {
+                return
+            }
+            
+            let firstWgsNumberField = firstWgsCell.contentView.subviews.compactMap { $0 as? UITextField }.first
+            let secondWgsNumberField = secondWgsCell.contentView.subviews.compactMap { $0 as? UITextField }.first
+            let firstCk42NumberField = firstCk42Cell.contentView.subviews.compactMap { $0 as? UITextField }.first
+            let secondCk42NumberField = secondCk42Cell.contentView.subviews.compactMap { $0 as? UITextField }.first
+            
+            firstWgsNumberField?.text = ""
+            secondWgsNumberField?.text = ""
+            firstCk42NumberField?.text = ""
+            secondCk42NumberField?.text = ""
+        }
     }
+
+
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let headerView = UIView()
