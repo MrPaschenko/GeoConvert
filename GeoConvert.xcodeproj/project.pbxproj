@@ -14,7 +14,18 @@
 		A2E0F71E29F1792B007EB941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2E0F71D29F1792B007EB941 /* Assets.xcassets */; };
 		A2E0F72129F1792B007EB941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2E0F71F29F1792B007EB941 /* LaunchScreen.storyboard */; };
 		A2E0F72929F18E2D007EB941 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E0F72829F18E2D007EB941 /* MainTableViewController.swift */; };
+		FD02AB632A383B7F00E51071 /* GeoConvertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD02AB622A383B7F00E51071 /* GeoConvertTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD02AB642A383B7F00E51071 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2E0F70929F1792A007EB941 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2E0F71029F1792A007EB941;
+			remoteInfo = GeoConvert;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A258EA182A06908A00DDA283 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
@@ -26,10 +37,19 @@
 		A2E0F72029F1792B007EB941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2E0F72229F1792B007EB941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2E0F72829F18E2D007EB941 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		FD02AB602A383B7F00E51071 /* GeoConvertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoConvertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD02AB622A383B7F00E51071 /* GeoConvertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoConvertTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A2E0F70E29F1792A007EB941 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02AB5D2A383B7F00E51071 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -68,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E0F71329F1792A007EB941 /* GeoConvert */,
+				FD02AB612A383B7F00E51071 /* GeoConvertTests */,
 				A2E0F71229F1792A007EB941 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E0F71129F1792A007EB941 /* GeoConvert.app */,
+				FD02AB602A383B7F00E51071 /* GeoConvertTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +114,14 @@
 				A2E0F72229F1792B007EB941 /* Info.plist */,
 			);
 			path = GeoConvert;
+			sourceTree = "<group>";
+		};
+		FD02AB612A383B7F00E51071 /* GeoConvertTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD02AB622A383B7F00E51071 /* GeoConvertTests.swift */,
+			);
+			path = GeoConvertTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +144,24 @@
 			productReference = A2E0F71129F1792A007EB941 /* GeoConvert.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FD02AB5F2A383B7F00E51071 /* GeoConvertTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD02AB682A383B7F00E51071 /* Build configuration list for PBXNativeTarget "GeoConvertTests" */;
+			buildPhases = (
+				FD02AB5C2A383B7F00E51071 /* Sources */,
+				FD02AB5D2A383B7F00E51071 /* Frameworks */,
+				FD02AB5E2A383B7F00E51071 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD02AB652A383B7F00E51071 /* PBXTargetDependency */,
+			);
+			name = GeoConvertTests;
+			productName = GeoConvertTests;
+			productReference = FD02AB602A383B7F00E51071 /* GeoConvertTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -126,6 +174,10 @@
 				TargetAttributes = {
 					A2E0F71029F1792A007EB941 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					FD02AB5F2A383B7F00E51071 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = A2E0F71029F1792A007EB941;
 					};
 				};
 			};
@@ -143,6 +195,7 @@
 			projectRoot = "";
 			targets = (
 				A2E0F71029F1792A007EB941 /* GeoConvert */,
+				FD02AB5F2A383B7F00E51071 /* GeoConvertTests */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +208,13 @@
 				A2E0F72129F1792B007EB941 /* LaunchScreen.storyboard in Resources */,
 				A2E0F71E29F1792B007EB941 /* Assets.xcassets in Resources */,
 				A2E0F71C29F1792A007EB941 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD02AB5E2A383B7F00E51071 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +232,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD02AB5C2A383B7F00E51071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD02AB632A383B7F00E51071 /* GeoConvertTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD02AB652A383B7F00E51071 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2E0F71029F1792A007EB941 /* GeoConvert */;
+			targetProxy = FD02AB642A383B7F00E51071 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A2E0F71A29F1792A007EB941 /* Main.storyboard */ = {
@@ -370,6 +446,44 @@
 			};
 			name = Release;
 		};
+		FD02AB662A383B7F00E51071 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87TLCF6365;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaarko.GeoConvertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoConvert.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoConvert";
+			};
+			name = Debug;
+		};
+		FD02AB672A383B7F00E51071 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 87TLCF6365;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yaarko.GeoConvertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoConvert.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoConvert";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -387,6 +501,15 @@
 			buildConfigurations = (
 				A2E0F72629F1792B007EB941 /* Debug */,
 				A2E0F72729F1792B007EB941 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD02AB682A383B7F00E51071 /* Build configuration list for PBXNativeTarget "GeoConvertTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD02AB662A383B7F00E51071 /* Debug */,
+				FD02AB672A383B7F00E51071 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
