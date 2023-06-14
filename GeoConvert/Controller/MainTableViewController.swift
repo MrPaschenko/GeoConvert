@@ -5,7 +5,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
     var coordinates = Coordinates()
     var activeTextField: UITextField?
 
-    
     let placeholderTexts = ["50.447165", "30.453952", "5593789", "6319300"]
     let numberLimit = 9 // Maximum number of characters allowed
     
@@ -15,7 +14,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -153,9 +151,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
 
-
-
-
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         activeTextField = textField
         // Calculate the new text if the replacement string is applied
@@ -198,8 +193,6 @@ class MainTableViewController: UITableViewController, UITextFieldDelegate {
             secondCk42NumberField?.text = ""
         }
     }
-
-
 
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
