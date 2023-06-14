@@ -127,12 +127,4 @@ class Coordinates {
         
         SK42 = [newLatitude, newLongtitude, 0]
     }
-
-
-
-
-
-
 }
-
-

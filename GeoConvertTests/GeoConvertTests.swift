@@ -44,5 +44,4 @@ final class GeoConvertTests: XCTestCase {
         //Then:
             XCTAssertEqual(coordinates.SK42, expectedSK42, "WGS84 to SK42 conversion is incorrect")
         }
-
 }
