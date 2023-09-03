@@ -8,7 +8,7 @@ Simple iOS/iPadOS application to convert coordinates:
 
 ## Download & Run
 
-Soon on App Store
+[![Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917](https://user-images.githubusercontent.com/64316080/168581675-cfc29e4a-410c-4664-9213-31f11560813c.svg)](https://apps.apple.com/app/id6449973264)
 
 1. Clone this repository
 
