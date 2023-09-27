@@ -1,5 +1,7 @@
 # GeoConvert
 
+![Downloads](https://img.shields.io/badge/Downloads-12-brightgreen.svg)
+
 Simple iOS/iPadOS application to convert coordinates:
 
 - from WGS84 to SK-42
