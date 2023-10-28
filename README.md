@@ -1,6 +1,6 @@
 # GeoConvert
 
-![Downloads](https://img.shields.io/badge/Downloads-12-brightgreen.svg)
+![Downloads](https://img.shields.io/badge/Downloads-13-brightgreen.svg)
 
 Simple iOS/iPadOS application to convert coordinates:
 
